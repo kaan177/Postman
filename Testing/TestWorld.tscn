@@ -8,6 +8,7 @@
 extents = Vector2( 98, 97.5 )
 
 [node name="TestWorld" type="Node2D"]
+position = Vector2( 0, 3 )
 script = ExtResource( 3 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
