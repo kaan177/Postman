@@ -1,0 +1,26 @@
+[gd_scene format=2]
+
+[node name="Fullscreen" type="HBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 463.0
+margin_right = 561.0
+margin_bottom = 600.0
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+margin_top = 293.0
+margin_right = 70.0
+margin_bottom = 307.0
+text = "Full screen"
+
+[node name="CheckBox" type="CheckBox" parent="HBoxContainer"]
+margin_left = 74.0
+margin_right = 98.0
+margin_bottom = 600.0

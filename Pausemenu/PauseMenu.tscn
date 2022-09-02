@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Pausemenu/MusicVolume.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Pausemenu/SFXVolume.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Pausemenu/Controls.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Pausemenu/Fullscreen.tscn" type="PackedScene" id=4]
+
+[node name="PauseMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_left = 0.3
+anchor_top = 0.1
+anchor_right = 0.7
+anchor_bottom = 0.8
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+margin_right = 449.0
+margin_bottom = 460.0
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+anchor_left = 0.35
+anchor_top = 0.15
+anchor_right = 0.7
+anchor_bottom = 0.8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttens" type="VBoxContainer" parent="MarginContainer2"]
+margin_right = 358.0
+margin_bottom = 390.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MusicVolume" parent="MarginContainer2/Buttens" instance=ExtResource( 1 )]
+margin_right = 358.0
+margin_bottom = 20.0
+
+[node name="SFXVolume" parent="MarginContainer2/Buttens" instance=ExtResource( 2 )]
+margin_top = 24.0
+margin_right = 358.0
+margin_bottom = 44.0
+
+[node name="Controls" parent="MarginContainer2/Buttens" instance=ExtResource( 3 )]
+margin_top = 48.0
+margin_right = 358.0
+margin_bottom = 68.0
+
+[node name="Fullscreen" parent="MarginContainer2/Buttens" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 72.0
+margin_right = 358.0
+margin_bottom = 96.0

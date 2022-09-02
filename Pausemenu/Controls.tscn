@@ -1,0 +1,16 @@
+[gd_scene format=2]
+
+[node name="Controls" type="HBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_right = 65.0
+margin_bottom = 40.0
+grow_horizontal = 2
+text = "Controls"

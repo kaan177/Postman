@@ -1,0 +1,35 @@
+[gd_scene format=2]
+
+[node name="SFXVolume" type="HBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_top = 13.0
+margin_right = 74.0
+margin_bottom = 27.0
+size_flags_horizontal = 3
+text = "SFX volume"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 78.0
+margin_right = 111.0
+margin_bottom = 40.0
+
+[node name="LeftButton" type="Button" parent="HBoxContainer"]
+margin_right = 12.0
+margin_bottom = 40.0
+
+[node name="TextureProgress" type="TextureProgress" parent="HBoxContainer"]
+margin_left = 16.0
+margin_right = 17.0
+margin_bottom = 40.0
+
+[node name="RightButton" type="Button" parent="HBoxContainer"]
+margin_left = 21.0
+margin_right = 33.0
+margin_bottom = 40.0
