@@ -72,8 +72,8 @@ func Letterdirection():
 	#hier veranderen we de player input in een vector die de richting van de brief bepaalt
 	var Placeholdervector = Vector2.ZERO
 	
-	Placeholdervector.x = int(Input.is_action_pressed("right")) - int(Input.is_action_pressed("left"))
-	Placeholdervector.y = int(Input.is_action_pressed("down")) - int(Input.is_action_pressed("up"))
+	Placeholdervector.x = int(Input.is_action_pressed("letter_right")) - int(Input.is_action_pressed("letter_left"))
+	Placeholdervector.y = int(Input.is_action_pressed("letter_down")) - int(Input.is_action_pressed("letter_up"))
 	Placeholdervector = Placeholdervector.normalized()
 	
 	if Placeholdervector != Vector2.ZERO:
