@@ -1,0 +1,9 @@
+[gd_scene format=2]
+
+[node name="Control" type="Popup"]
+margin_right = 1000.0
+margin_bottom = 500.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
