@@ -139,3 +139,8 @@ text = "Full screen"
 margin_left = 74.0
 margin_right = 98.0
 margin_bottom = 24.0
+
+[connection signal="value_changed" from="MarginContainer2/Buttens/MusicVolume/HBoxContainer/MVslider" to="." method="_on_MVslider_value_changed"]
+[connection signal="value_changed" from="MarginContainer2/Buttens/SFXVolume/HBoxContainer/SFXVslider" to="." method="_on_SFXVslider_value_changed"]
+[connection signal="toggled" from="MarginContainer2/Buttens/Controls/Controls_btn" to="." method="_on_Controls_btn_toggled"]
+[connection signal="toggled" from="MarginContainer2/Buttens/Fullscreen/HBoxContainer/FScheckbox" to="." method="_on_FScheckbox_toggled"]
