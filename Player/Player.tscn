@@ -94,6 +94,7 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_horizontal_guides_": [ -45.0 ]
 }
+Jump_height = 400
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -13 )
@@ -112,3 +113,5 @@ anims/Fall = SubResource( 6 )
 anims/Jump = SubResource( 5 )
 anims/RESET = SubResource( 3 )
 anims/Run = SubResource( 4 )
+
+[node name="Tween" type="Tween" parent="."]
