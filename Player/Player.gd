@@ -26,10 +26,12 @@ func _physics_process(_delta):
 	if not Input.is_action_pressed("stand_still"):
 		Move()
 	
-	Letterdirection()
+	if Input.is_action_just_pressed("letter_right") or Input.is_action_just_pressed("letter_left") or Input.is_action_just_pressed("letter_up") or Input.is_action_just_pressed("letter_down"):
+		LetterThrow()
 	
-	if Input.is_action_just_pressed("throw_letter"):
-		Throwletter()
+	
+	
+	
 
 
 func Move():
@@ -73,7 +75,7 @@ func Move():
 			Motion.x = lerp(Motion.x, 0, Friction/4)
 	Motion = move_and_slide(Motion, UP)
 #Getting the direction of the letter
-func Letterdirection():
+func LetterThrow():
 	#hier veranderen we de player input in een vector die de richting van de brief bepaalt
 	var Placeholdervector = Vector2.ZERO
 	
@@ -83,8 +85,7 @@ func Letterdirection():
 	
 	if Placeholdervector != Vector2.ZERO:
 		Lettervector = Placeholdervector
-#Signaling World node to spawn letter
-func Throwletter():
+	#Signaling World node to spawn letter
 	emit_signal("letter_request", Lettervector)
 
 
