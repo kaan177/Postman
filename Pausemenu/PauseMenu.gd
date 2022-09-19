@@ -13,16 +13,20 @@ func _ready():
 
 
 func _on_MVslider_value_changed(value):
-	pass # Replace with function body.
+	Global_settings.Set_music_vollume(value)
 
 
 func _on_SFXVslider_value_changed(value):
-	pass # Replace with function body.
+	Global_settings.Set_SFX_vollume(value)
 
 
 func _on_Controls_btn_toggled(button_pressed):
-	pass # Replace with function body.
+	Open_controls_scene()
 
 
 func _on_FScheckbox_toggled(button_pressed):
-	pass # Replace with function body.
+	Global_settings.Toggle_fullscreen(button_pressed)
+
+
+func Open_controls_scene():
+	pass

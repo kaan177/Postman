@@ -14,6 +14,10 @@ config/name="Postman"
 run/main_scene="res://Testing/TestWorld.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global_settings="*res://Global_settings.gd"
+
 [input]
 
 throw_letter={
