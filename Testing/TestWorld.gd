@@ -2,7 +2,7 @@ extends Node2D
 
 
 onready var Player = get_node("Player")
-
+onready var Pause_menu = $PauseMenu
 
 func _ready():
 	#connect signal met de speler node
@@ -15,3 +15,7 @@ func Spawn_letter(Lettervector):
 		Letter.set_position(Player.position)
 		Letter.Direction = Lettervector
 		self.add_child(Letter)
+
+
+
+

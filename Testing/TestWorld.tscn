@@ -30,4 +30,5 @@ position = Vector2( 369, 227 )
 collision_layer = 2
 
 [node name="PauseMenu" parent="." instance=ExtResource( 4 )]
+pause_mode = 2
 visible = false
