@@ -14,9 +14,6 @@ anchor_right = 0.7
 anchor_bottom = 0.8
 margin_right = 40.0
 margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Panel" type="Panel" parent="MarginContainer"]
 margin_right = 449.0
@@ -69,10 +66,41 @@ margin_bottom = 16.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="SFXVolume" type="HBoxContainer" parent="MarginContainer2/Buttens"]
+[node name="MassterVolume" type="HBoxContainer" parent="MarginContainer2/Buttens"]
 margin_top = 20.0
 margin_right = 358.0
 margin_bottom = 36.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MarginContainer2/Buttens/MassterVolume"]
+margin_top = 1.0
+margin_right = 177.0
+margin_bottom = 15.0
+size_flags_horizontal = 3
+text = "Master Volume"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/Buttens/MassterVolume"]
+margin_left = 181.0
+margin_right = 358.0
+margin_bottom = 16.0
+grow_horizontal = 0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MaVslider" type="HSlider" parent="MarginContainer2/Buttens/MassterVolume/HBoxContainer"]
+margin_right = 177.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+
+[node name="SFXVolume" type="HBoxContainer" parent="MarginContainer2/Buttens"]
+margin_top = 40.0
+margin_right = 358.0
+margin_bottom = 56.0
 size_flags_horizontal = 3
 __meta__ = {
 "_edit_use_anchors_": false
@@ -97,9 +125,9 @@ margin_bottom = 16.0
 size_flags_horizontal = 3
 
 [node name="Controls" type="HBoxContainer" parent="MarginContainer2/Buttens"]
-margin_top = 40.0
+margin_top = 60.0
 margin_right = 358.0
-margin_bottom = 60.0
+margin_bottom = 80.0
 size_flags_horizontal = 3
 alignment = 1
 __meta__ = {
@@ -114,9 +142,9 @@ grow_horizontal = 2
 text = "Controls"
 
 [node name="Fullscreen" type="HBoxContainer" parent="MarginContainer2/Buttens"]
-margin_top = 64.0
+margin_top = 84.0
 margin_right = 358.0
-margin_bottom = 88.0
+margin_bottom = 108.0
 size_flags_horizontal = 3
 alignment = 1
 __meta__ = {
@@ -140,6 +168,7 @@ margin_right = 98.0
 margin_bottom = 24.0
 
 [connection signal="value_changed" from="MarginContainer2/Buttens/MusicVolume/HBoxContainer/MVslider" to="." method="_on_MVslider_value_changed"]
+[connection signal="value_changed" from="MarginContainer2/Buttens/MassterVolume/HBoxContainer/MaVslider" to="." method="_on_MaVslider_value_changed"]
 [connection signal="value_changed" from="MarginContainer2/Buttens/SFXVolume/HBoxContainer/SFXVslider" to="." method="_on_SFXVslider_value_changed"]
 [connection signal="toggled" from="MarginContainer2/Buttens/Controls/Controls_btn" to="." method="_on_Controls_btn_toggled"]
 [connection signal="toggled" from="MarginContainer2/Buttens/Fullscreen/HBoxContainer/FScheckbox" to="." method="_on_FScheckbox_toggled"]
