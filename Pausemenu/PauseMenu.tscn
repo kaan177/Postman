@@ -68,7 +68,6 @@ margin_right = 177.0
 margin_bottom = 16.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-step = 100.0
 
 [node name="SFXVolume" type="HBoxContainer" parent="MarginContainer2/Buttens"]
 margin_top = 20.0
