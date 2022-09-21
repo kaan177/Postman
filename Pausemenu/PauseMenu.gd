@@ -1,4 +1,5 @@
 extends Control
+
 #Gettingacces to all the needed nodes
 onready var Music_volume_slider = $MarginContainer2/Buttens/MusicVolume/HBoxContainer/MVslider
 onready var SFX_volume_slider = $MarginContainer2/Buttens/SFXVolume/HBoxContainer/SFXVslider
@@ -21,9 +22,6 @@ func _input(event):
 			get_tree().paused = false
 
 
-func Close_settings():
-	self.hide()
-	get_tree().paused = false
 
 func _on_MVslider_value_changed(value):
 	Global_settings.Set_music_vollume(value)
