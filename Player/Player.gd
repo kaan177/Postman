@@ -20,6 +20,7 @@ var Lettervector = Vector2.RIGHT
 #Loading variables in
 onready var animation_player = $AnimationPlayer
 onready var sprite = $Sprite
+onready var MudRun_audio = $MudRun
 
 func _physics_process(_delta):
 	#Handeling movement
@@ -42,6 +43,7 @@ func Move():
 		Motion.x = min(Motion.x + Accelaration, Max_speed)
 		if is_on_floor():
 			animation_player.play("Run")
+			MudRun_audio.play()
 		sprite.flip_h = false
 	
 	
@@ -49,7 +51,9 @@ func Move():
 		Motion.x = max(Motion.x - Accelaration, - Max_speed)
 		if is_on_floor():
 			animation_player.play("Run")
+			MudRun_audio.play()
 		sprite.flip_h = true
+		
 	
 	else:
 		frictiondetection = true
@@ -87,5 +91,6 @@ func LetterThrow():
 		Lettervector = Placeholdervector
 	#Signaling World node to spawn letter
 	emit_signal("letter_request", Lettervector)
+
 
 

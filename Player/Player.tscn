@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
+[ext_resource path="res://Sounds/mudrun (1).wav" type="AudioStream" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
 [ext_resource path="res://Character_sprites.png" type="Texture" id=3]
 
@@ -116,4 +117,5 @@ anims/Run = SubResource( 4 )
 
 [node name="Tween" type="Tween" parent="."]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="MudRun" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )

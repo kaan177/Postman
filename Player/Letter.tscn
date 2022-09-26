@@ -10,8 +10,8 @@ extents = Vector2( 7, 7 )
 [node name="Letter" type="KinematicBody2D"]
 collision_layer = 8
 script = ExtResource( 2 )
-Death_timer = 100
-Speed = 1
+Death_timer = 1
+Speed = 10
 
 [node name="Sprite" type="Sprite" parent="."]
 modulate = Color( 0.822266, 1, 0, 1 )
