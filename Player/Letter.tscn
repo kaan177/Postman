@@ -10,8 +10,8 @@ extents = Vector2( 7, 7 )
 [node name="Letter" type="KinematicBody2D"]
 collision_layer = 8
 script = ExtResource( 2 )
-Death_timer = 10
-Speed = 10
+Death_timer = 100
+Speed = 1
 
 [node name="Sprite" type="Sprite" parent="."]
 modulate = Color( 0.822266, 1, 0, 1 )
@@ -22,9 +22,8 @@ texture = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.255
+wait_time = 0.1
 one_shot = true
-autostart = true
 
 [node name="PapierWoosh" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )

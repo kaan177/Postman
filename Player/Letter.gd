@@ -5,7 +5,7 @@ export var Speed = 200
 var Direction = Vector2.ZERO
 
 func _ready():
-	$Timer.set_wait_time(Death_timer)
+	$Timer.start(Death_timer)
 
 #Handelt de movement
 func _physics_process(delta):
