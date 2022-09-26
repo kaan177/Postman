@@ -22,7 +22,6 @@ texture = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.1
 one_shot = true
 
 [node name="PapierWoosh" type="AudioStreamPlayer" parent="."]
@@ -31,3 +30,4 @@ pitch_scale = 2.66
 autoplay = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="finished" from="PapierWoosh" to="." method="_on_PapierWoosh_finished"]

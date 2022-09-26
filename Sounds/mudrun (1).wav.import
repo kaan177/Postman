@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/mudrun (1).wav-b3469d8efe06941df01e79c30f1b78c6.sample"
+
+[deps]
+
+source_file="res://Sounds/mudrun (1).wav"
+dest_files=[ "res://.import/mudrun (1).wav-b3469d8efe06941df01e79c30f1b78c6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
