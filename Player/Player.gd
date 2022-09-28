@@ -43,15 +43,17 @@ func Move():
 		Motion.x = min(Motion.x + Accelaration, Max_speed)
 		if is_on_floor():
 			animation_player.play("Run")
-			MudRun_audio.play()
+			if not MudRun_audio.playing:
+				MudRun_audio.play()
 		sprite.flip_h = false
 	
-	
+
 	elif Input.is_action_pressed("left"):
 		Motion.x = max(Motion.x - Accelaration, - Max_speed)
 		if is_on_floor():
 			animation_player.play("Run")
-			MudRun_audio.play()
+			if not MudRun_audio.playing:
+				MudRun_audio.play()
 		sprite.flip_h = true
 		
 	
@@ -59,7 +61,8 @@ func Move():
 		frictiondetection = true
 		if not Input.is_action_pressed("up") and is_on_floor():
 			animation_player.play("Default")
-			
+			MudRun_audio.stop()
+							
 	if Input.is_action_just_released("up"):
 		if Motion.y < -100:
 			get_node("Tween").interpolate_property(self,'Motion:y',Motion.y, -100, 0.15,Tween.TRANS_SINE,Tween.EASE_OUT)
