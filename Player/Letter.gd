@@ -3,9 +3,10 @@ extends KinematicBody2D
 export var Death_timer = 5
 export var Speed = 200
 var Direction = Vector2.ZERO
+onready var PapierWoosh_Audio  =  $PapierWoosh
 
 func _ready():
-	$Timer.set_wait_time(Death_timer)
+	$Timer.start(Death_timer)
 
 #Handelt de movement
 func _physics_process(delta):
@@ -18,3 +19,7 @@ func Death():
 
 func _on_Timer_timeout():
 	Death()
+
+
+func _on_PapierWoosh_finished():
+	PapierWoosh_Audio.play()
