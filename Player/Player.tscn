@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Sounds/mudrun (1).wav" type="AudioStream" id=1]
+[ext_resource path="res://Sounds/stonestep.wav" type="AudioStream" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
 [ext_resource path="res://Textures/Character_sprites.png" type="Texture" id=3]
+[ext_resource path="res://Sounds/stoneleap.wav" type="AudioStream" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 7.0
@@ -57,6 +58,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 4, 5 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("../StoneLeap:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=3]
 length = 0.001
@@ -89,6 +102,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 0, 1, 2, 3 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("../StoneStep:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, true, true ]
+}
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -117,6 +142,9 @@ anims/Run = SubResource( 4 )
 
 [node name="Tween" type="Tween" parent="."]
 
-[node name="MudRun" type="AudioStreamPlayer" parent="."]
+[node name="StoneStep" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
 bus = "SoundEffects"
+
+[node name="StoneLeap" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
