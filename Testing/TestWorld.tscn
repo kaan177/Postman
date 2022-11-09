@@ -341,17 +341,9 @@ texture = ExtResource( 1 )
 position = Vector2( -67, 67.5 )
 shape = SubResource( 1 )
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 54, 100 )
-
-[node name="TopLeft" parent="Player/PlayerCamera/Node" index="0"]
-position = Vector2( -72, -32 )
-
-[node name="BottemRight" parent="Player/PlayerCamera/Node" index="1"]
-position = Vector2( 432, 224 )
-
 [node name="TileMap" parent="." instance=ExtResource( 8 )]
 tile_set = SubResource( 34 )
+tile_data = PoolIntArray( 65534, 0, 0, 262206, 0, 0, 393277, 0, 0, 589884, 0, 0, 786495, 0, 0 )
 
 [node name="WaterTimer" parent="." instance=ExtResource( 7 )]
 
@@ -359,6 +351,16 @@ tile_set = SubResource( 34 )
 position = Vector2( 288, 120 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 49, 81 )
+
+[node name="PlayerCamera" parent="Player" index="6"]
+position = Vector2( 3, -4 )
+
+[node name="TopLeft" parent="Player/PlayerCamera/Node" index="0"]
+position = Vector2( -91, -3 )
+
+[node name="BottemRight" parent="Player/PlayerCamera/Node" index="1"]
+position = Vector2( 233, 183 )
 
 [connection signal="timeout" from="WaterTimer" to="." method="_on_WaterTimer_timeout"]
 
