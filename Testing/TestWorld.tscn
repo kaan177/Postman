@@ -326,7 +326,10 @@ pause_mode = 2
 visible = false
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2( 404, 295 )
+position = Vector2( 162, 138 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="AnimatedSprite" type="Sprite" parent="StaticBody2D2"]
 modulate = Color( 0.290196, 1, 0, 1 )
@@ -339,7 +342,7 @@ position = Vector2( -67, 67.5 )
 shape = SubResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 376, 224 )
+position = Vector2( 54, 100 )
 
 [node name="TileMap" parent="." instance=ExtResource( 8 )]
 tile_set = SubResource( 34 )

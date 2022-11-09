@@ -3,8 +3,8 @@
 [ext_resource path="res://Pausemenu/PauseMenu.gd" type="Script" id=1]
 
 [node name="PauseMenu" type="Control"]
-margin_right = 1024.0
-margin_bottom = 600.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -16,8 +16,8 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="Panel" type="Panel" parent="MarginContainer"]
-margin_right = 449.0
-margin_bottom = 460.0
+margin_right = 142.0
+margin_bottom = 145.0
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 anchor_left = 0.35
@@ -29,14 +29,14 @@ __meta__ = {
 }
 
 [node name="Buttens" type="VBoxContainer" parent="MarginContainer2"]
-margin_right = 358.0
-margin_bottom = 390.0
+margin_right = 117.0
+margin_bottom = 108.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="MusicVolume" type="HBoxContainer" parent="MarginContainer2/Buttens"]
-margin_right = 358.0
+margin_right = 117.0
 margin_bottom = 16.0
 size_flags_horizontal = 3
 __meta__ = {
@@ -45,14 +45,14 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="MarginContainer2/Buttens/MusicVolume"]
 margin_top = 1.0
-margin_right = 177.0
+margin_right = 91.0
 margin_bottom = 15.0
 size_flags_horizontal = 3
 text = "Music Volume"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/Buttens/MusicVolume"]
-margin_left = 181.0
-margin_right = 358.0
+margin_left = 95.0
+margin_right = 117.0
 margin_bottom = 16.0
 grow_horizontal = 0
 size_flags_horizontal = 3
@@ -61,7 +61,7 @@ __meta__ = {
 }
 
 [node name="MVslider" type="HSlider" parent="MarginContainer2/Buttens/MusicVolume/HBoxContainer"]
-margin_right = 177.0
+margin_right = 22.0
 margin_bottom = 16.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -70,7 +70,7 @@ value = 30.0
 
 [node name="MassterVolume" type="HBoxContainer" parent="MarginContainer2/Buttens"]
 margin_top = 20.0
-margin_right = 358.0
+margin_right = 117.0
 margin_bottom = 36.0
 size_flags_horizontal = 3
 __meta__ = {
@@ -79,14 +79,14 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="MarginContainer2/Buttens/MassterVolume"]
 margin_top = 1.0
-margin_right = 177.0
+margin_right = 97.0
 margin_bottom = 15.0
 size_flags_horizontal = 3
 text = "Master Volume"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/Buttens/MassterVolume"]
-margin_left = 181.0
-margin_right = 358.0
+margin_left = 101.0
+margin_right = 117.0
 margin_bottom = 16.0
 grow_horizontal = 0
 size_flags_horizontal = 3
@@ -95,7 +95,7 @@ __meta__ = {
 }
 
 [node name="MaVslider" type="HSlider" parent="MarginContainer2/Buttens/MassterVolume/HBoxContainer"]
-margin_right = 177.0
+margin_right = 16.0
 margin_bottom = 16.0
 size_flags_horizontal = 3
 max_value = 30.0
@@ -103,7 +103,7 @@ value = 30.0
 
 [node name="SFXVolume" type="HBoxContainer" parent="MarginContainer2/Buttens"]
 margin_top = 40.0
-margin_right = 358.0
+margin_right = 117.0
 margin_bottom = 56.0
 size_flags_horizontal = 3
 __meta__ = {
@@ -112,19 +112,19 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="MarginContainer2/Buttens/SFXVolume"]
 margin_top = 1.0
-margin_right = 177.0
+margin_right = 74.0
 margin_bottom = 15.0
 size_flags_horizontal = 3
 text = "SFX volume"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/Buttens/SFXVolume"]
-margin_left = 181.0
-margin_right = 358.0
+margin_left = 78.0
+margin_right = 117.0
 margin_bottom = 16.0
 size_flags_horizontal = 3
 
 [node name="SFXVslider" type="HSlider" parent="MarginContainer2/Buttens/SFXVolume/HBoxContainer"]
-margin_right = 177.0
+margin_right = 39.0
 margin_bottom = 16.0
 size_flags_horizontal = 3
 max_value = 30.0
@@ -132,7 +132,7 @@ value = 30.0
 
 [node name="Controls" type="HBoxContainer" parent="MarginContainer2/Buttens"]
 margin_top = 60.0
-margin_right = 358.0
+margin_right = 117.0
 margin_bottom = 80.0
 size_flags_horizontal = 3
 alignment = 1
@@ -141,15 +141,15 @@ __meta__ = {
 }
 
 [node name="Controls_btn" type="Button" parent="MarginContainer2/Buttens/Controls"]
-margin_left = 146.0
-margin_right = 211.0
+margin_left = 26.0
+margin_right = 91.0
 margin_bottom = 20.0
 grow_horizontal = 2
 text = "Controls"
 
 [node name="Fullscreen" type="HBoxContainer" parent="MarginContainer2/Buttens"]
 margin_top = 84.0
-margin_right = 358.0
+margin_right = 117.0
 margin_bottom = 108.0
 size_flags_horizontal = 3
 alignment = 1
@@ -158,8 +158,8 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/Buttens/Fullscreen"]
-margin_left = 130.0
-margin_right = 228.0
+margin_left = 9.0
+margin_right = 107.0
 margin_bottom = 24.0
 
 [node name="Label" type="Label" parent="MarginContainer2/Buttens/Fullscreen/HBoxContainer"]
