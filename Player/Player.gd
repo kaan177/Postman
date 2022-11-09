@@ -56,7 +56,6 @@ func Move():
 		frictiondetection = true
 		if not Input.is_action_pressed("up") and is_on_floor():
 			animation_player.play("Default")
-							
 	if Input.is_action_just_released("up"):
 		if Motion.y < -100:
 			get_node("Tween").interpolate_property(self,'Motion:y',Motion.y, -100, 0.15,Tween.TRANS_SINE,Tween.EASE_OUT)
