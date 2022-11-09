@@ -344,6 +344,12 @@ shape = SubResource( 1 )
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 54, 100 )
 
+[node name="TopLeft" parent="Player/PlayerCamera/Node" index="0"]
+position = Vector2( -72, -32 )
+
+[node name="BottemRight" parent="Player/PlayerCamera/Node" index="1"]
+position = Vector2( 432, 224 )
+
 [node name="TileMap" parent="." instance=ExtResource( 8 )]
 tile_set = SubResource( 34 )
 
@@ -353,3 +359,6 @@ tile_set = SubResource( 34 )
 position = Vector2( 288, 120 )
 
 [connection signal="timeout" from="WaterTimer" to="." method="_on_WaterTimer_timeout"]
+
+[editable path="Player"]
+[editable path="Player/PlayerCamera"]
