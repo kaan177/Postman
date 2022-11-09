@@ -340,7 +340,6 @@ shape = SubResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 376, 224 )
-collision_layer = 2
 
 [node name="TileMap" parent="." instance=ExtResource( 8 )]
 tile_set = SubResource( 34 )
@@ -349,3 +348,5 @@ tile_set = SubResource( 34 )
 
 [node name="Water" parent="." instance=ExtResource( 6 )]
 position = Vector2( 288, 120 )
+
+[connection signal="timeout" from="WaterTimer" to="." method="_on_WaterTimer_timeout"]
