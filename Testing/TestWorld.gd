@@ -1,5 +1,6 @@
 extends Node2D
 
+signal WaterMovement()
 
 onready var Player = get_node("Player")
 onready var Pause_menu = $PauseMenu
@@ -17,5 +18,5 @@ func Spawn_letter(Lettervector):
 		self.add_child(Letter)
 
 
-
-
+func _on_WaterTimer_timeout():
+	emit_signal("WaterMovement")
