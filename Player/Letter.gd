@@ -9,7 +9,7 @@ func _ready():
 	$Timer.start(Death_timer)
 
 #Handelt de movement
-func _physics_process(delta):
+func _physics_process(_delta):
 	var Movement = Direction * Speed
 	Movement = move_and_collide(Movement)
 
