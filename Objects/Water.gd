@@ -18,11 +18,9 @@ func _ready():
 
 #the movement code
 func movement():
-	if Vector == Vector2.ZERO:
-		Vector = GRAVITY
-	else:
-		Vector += GRAVITY
+	Vector += GRAVITY
 	Vector = Vector.normalized()
+	
 	var dir = rad2deg(Vector.angle())
 	
 	
