@@ -10,9 +10,9 @@ const UP = Vector2(0, -1)
 export var Max_speed = 100
 export var Accelaration = 10
 export var Friction = 0.2
-var Jump_height = 130
-var Jump_time_to_peak = .7
-var Jump_time_to_descent = .7
+var Jump_height = 100
+var Jump_time_to_peak = .5
+var Jump_time_to_descent = .4
 
 
 #Remaining variables
