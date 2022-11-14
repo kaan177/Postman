@@ -3,7 +3,7 @@ extends KinematicBody2D
 const GRAVITY = Vector2(0, 0.2)
 const UP = Vector2.UP
 
-var Vector = Vector2.RIGHT
+var Vector = Vector2.ZERO
 var Rng = RandomNumberGenerator.new()
 var Move = false
 
