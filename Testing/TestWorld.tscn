@@ -362,10 +362,11 @@ tile_data = PoolIntArray( -131012, 0, 65542, -65484, 0, 65542, -65476, 0, 131078
 
 [node name="Water" parent="." instance=ExtResource( 6 )]
 position = Vector2( 24, 40 )
-collision_layer = 17
 
 [node name="Level T-1" parent="." instance=ExtResource( 9 )]
 position = Vector2( 128, 88 )
+
+[connection signal="timeout" from="WaterTimer" to="." method="_on_WaterTimer_timeout"]
 
 [editable path="Player"]
 [editable path="Player/PlayerCamera"]
