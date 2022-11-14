@@ -11,7 +11,6 @@ func _ready():
 
 #Spawnt de letter
 func Spawn_letter(Lettervector):
-	print(Lettervector)
 	if not $Letter in get_children():
 		var Letter = preload("res://Player/Letter.tscn").instance()
 		Letter.set_position(Player.position)
