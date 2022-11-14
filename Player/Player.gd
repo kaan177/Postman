@@ -26,7 +26,7 @@ func _physics_process(_delta):
 	if not Input.is_action_pressed("stand_still"):
 		Move()
 	
-	if Input.is_action_just_pressed("letter_right") or Input.is_action_just_pressed("letter_left") or Input.is_action_just_pressed("letter_up") or Input.is_action_just_pressed("letter_down"):
+	if Input.is_action_just_pressed("letter_right") or Input.is_action_just_pressed("letter_left") or Input.is_action_just_pressed("letter_up"):
 		LetterThrow()
 	
 	
@@ -79,14 +79,25 @@ func LetterThrow():
 	#hier veranderen we de player input in een vector die de richting van de brief bepaalt
 	var Placeholdervector = Vector2.ZERO
 	
-	Placeholdervector.x = int(Input.is_action_pressed("letter_right")) - int(Input.is_action_pressed("letter_left"))
-	Placeholdervector.y = int(Input.is_action_pressed("letter_down")) - int(Input.is_action_pressed("letter_up"))
-	Placeholdervector = Placeholdervector.normalized()
+	if Input.is_action_pressed("letter_right"):
+		Placeholdervector.x = 1
+#		aimationplayer.play("Throw")
+	elif Input.is_action_pressed("letter_left"):
+		Placeholdervector.x = -1
 	
-	if Placeholdervector != Vector2.ZERO:
-		Lettervector = Placeholdervector
+	elif Input.is_action_pressed("letter_up"): 
+		Placeholdervector.y = -1
+		
+#
+#	Placeholdervector.x = int(Input.is_action_pressed("letter_right")) - int(Input.is_action_pressed("letter_left"))
+#	Placeholdervector.y = int(Input.is_action_pressed("letter_down")) - int(Input.is_action_pressed("letter_up"))
+	
+	
+
+	
+	
 	#Signaling World node to spawn letter
-	emit_signal("letter_request", Lettervector)
+	emit_signal("letter_request", Placeholdervector)
 
 
 
