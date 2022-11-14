@@ -445,7 +445,6 @@ tile_data = PoolIntArray( -1114094, 0, 65536, -1114093, 0, 196612, -1114092, 0, 
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 74, 135 )
-Jump_height = 200
 
 [node name="TopLeft" parent="Player/PlayerCamera/Node" index="0"]
 position = Vector2( -63, -169 )

@@ -122,7 +122,6 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_horizontal_guides_": [ -45.0 ]
 }
-Jump_height = 400
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -15.5 )
