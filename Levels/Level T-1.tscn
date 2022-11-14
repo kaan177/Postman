@@ -453,5 +453,8 @@ position = Vector2( -63, -169 )
 [node name="BottemRight" parent="Player/PlayerCamera/Node" index="1"]
 position = Vector2( 1246, 255 )
 
+[node name="TestWorldpos" type="Position2D" parent="."]
+position = Vector2( 16, 104 )
+
 [editable path="Player"]
 [editable path="Player/PlayerCamera"]
