@@ -1,17 +1,33 @@
 extends KinematicBody2D
 
-export var Death_timer = 5
-export var Speed = 200
+var Death_timer = 0.4
+var Speed = 400
 var Direction = Vector2.ZERO
-onready var PapierWoosh_Audio  =  $PapierWoosh
+onready var Sprite = $Sprite
+onready var PapierHit = $PapierHit
+onready var CollisionShape2D = $CollisionShape2D
 
 func _ready():
 	$Timer.start(Death_timer)
+	if Direction == Vector2(-1,0):
+		Sprite.flip_h = true
+		position += Vector2(-10,-6)
+		CollisionShape2D.position += Vector2(4,0)
+	elif Direction == Vector2(1,0):
+		 position += Vector2(10,-6)
+	elif Direction == Vector2(0,-1): 
+		Sprite.rotation_degrees = 270
+		position += Vector2(0,-12)
+		
 
 #Handelt de movement
 func _physics_process(_delta):
 	var Movement = Direction * Speed
-	Movement = move_and_collide(Movement)
+	Movement = move_and_slide(Movement)
+	if is_on_wall():
+		Sprite.frame = 1
+		if not PapierHit.playing: 
+			PapierHit.play()
 
 #handelt de death animatie
 func Death():
@@ -19,7 +35,4 @@ func Death():
 
 func _on_Timer_timeout():
 	Death()
-
-
-func _on_PapierWoosh_finished():
-	PapierWoosh_Audio.play()
+	
