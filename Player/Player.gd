@@ -21,7 +21,7 @@ var Lettervector = Vector2.RIGHT
 onready var animation_player = $AnimationPlayer
 onready var sprite = $Sprite
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	#Handeling movement
 	if not Input.is_action_pressed("stand_still"):
 		Move()
@@ -30,8 +30,8 @@ func _physics_process(_delta):
 		LetterThrow()
 	
 	
-	
-	
+
+
 
 
 func Move():
