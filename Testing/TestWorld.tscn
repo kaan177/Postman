@@ -343,7 +343,7 @@ shape = SubResource( 1 )
 
 [node name="TileMap" parent="." instance=ExtResource( 8 )]
 tile_set = SubResource( 34 )
-tile_data = PoolIntArray( 65534, 0, 0, 262206, 0, 0, 393277, 0, 0, 589884, 0, 0, 786495, 0, 0 )
+tile_data = PoolIntArray( 65534, 0, 0, 262206, 0, 0, 393204, 0, 0, 393277, 0, 0, 589884, 0, 0, 786495, 0, 0 )
 
 [node name="WaterTimer" parent="." instance=ExtResource( 7 )]
 
