@@ -477,6 +477,7 @@ position = Vector2( -88, -112 )
 position = Vector2( 1224, 136 )
 
 [node name="WaterTimer" parent="." instance=ExtResource( 7 )]
+wait_time = 0.5
 
 [node name="Level T-1" parent="." instance=ExtResource( 9 )]
 position = Vector2( 128, 88 )

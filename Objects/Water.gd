@@ -14,6 +14,7 @@ onready var world = get_parent()
 func _ready():
 	world.connect("WaterMovement", self, "make_a_move")
 	Rng.randomize()
+	make_a_move()
 	
 
 func make_a_move():
