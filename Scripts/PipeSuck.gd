@@ -32,7 +32,7 @@ func Spitfar():
 
 func _on_Area2D_body_entered(body):
 	bodies += 1
-	print(bodies)
+	
 
 
 func _on_Area2D_body_exited(body):

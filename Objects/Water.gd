@@ -53,8 +53,10 @@ func _physics_process(delta):
 		
 		var Usebal_dir = Directions[(int(Calculations) - Adjustment) % 4]
 		
-		move_and_slide(Usebal_dir * 8 / delta, UP)
+		move_and_slide(Usebal_dir / delta, UP)
+		position = Vector2(int(position.x), int(position.y))
 		Move = false
+		print(position)
 
 
 

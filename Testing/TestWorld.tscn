@@ -477,13 +477,14 @@ position = Vector2( -88, -112 )
 position = Vector2( 1224, 136 )
 
 [node name="WaterTimer" parent="." instance=ExtResource( 7 )]
-wait_time = 0.5
+wait_time = 0.1
 
 [node name="Level T-1" parent="." instance=ExtResource( 9 )]
 position = Vector2( 128, 88 )
 
 [node name="TileMap" parent="." instance=ExtResource( 8 )]
 tile_set = SubResource( 44 )
+tile_data = PoolIntArray( 262139, 0, 0, 262206, 0, 0, 393215, 0, 65542, 327681, 0, 65542, 458751, 0, 131078, 393217, 0, 131078, 393277, 0, 0, 524287, 0, 0, 458752, 0, 4, 458753, 0, 0, 589884, 0, 0, 786495, 0, 0 )
 
 [node name="PipeEnd" parent="." instance=ExtResource( 12 )]
 position = Vector2( -8, 64 )
