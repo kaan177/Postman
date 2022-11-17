@@ -1,25 +1,22 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Testing/TestWorld.gd" type="Script" id=3]
 [ext_resource path="res://Pausemenu/PauseMenu.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Textures/TIle_set_caves2.png" type="Texture" id=5]
+[ext_resource path="res://Objects/Water.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/WaterTimer.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Objects/TileMap.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Objects/Portal.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Textures/valve pipre.png" type="Texture" id=10]
 [ext_resource path="res://Textures/Pipes.png" type="Texture" id=11]
-[ext_resource path="res://Objects/PipeEnd.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 98, 97.5 )
+extents = Vector2( 98, 98 )
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=4]
-points = PoolVector2Array( 16, 16, 16, 16, 16, 16, 16, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=5]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -164,12 +161,6 @@ resource_local_to_scene = true
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": SubResource( 3 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-}, {
-"autotile_coord": Vector2( 0, 2 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 4 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
 "autotile_coord": Vector2( 0, 2 ),
@@ -486,8 +477,8 @@ position = Vector2( 128, 88 )
 tile_set = SubResource( 44 )
 tile_data = PoolIntArray( 262139, 0, 0, 262206, 0, 0, 393215, 0, 65542, 327681, 0, 65542, 458751, 0, 131078, 393217, 0, 131078, 393277, 0, 0, 524287, 0, 0, 458752, 0, 4, 458753, 0, 0, 589884, 0, 0, 786495, 0, 0 )
 
-[node name="PipeEnd" parent="." instance=ExtResource( 12 )]
-position = Vector2( -8, 64 )
+[node name="Water" parent="." instance=ExtResource( 6 )]
+position = Vector2( 45, 39 )
 
 [connection signal="timeout" from="WaterTimer" to="." method="_on_WaterTimer_timeout"]
 
