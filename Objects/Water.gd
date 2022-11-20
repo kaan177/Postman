@@ -6,7 +6,10 @@ var Vector = Vector2.ZERO
 var Rng = RandomNumberGenerator.new()
 
 onready var world = get_parent()
-onready var ray_cast_2d = $RayCast2D
+onready var down = $Down
+onready var right = $Right
+onready var left = $Left
+onready var up = $Up
 
 
 #connenct signal
@@ -23,6 +26,7 @@ func make_a_move():
 	
 	
 	var Directions = [Vector2(-1, 0), Vector2(0, -1), Vector2(1, 0), Vector2(0, 1)]
+	var Cheking_dir = [left, up, right, down]
 	var Calculations = fmod(dir + 180 + 45, 360)/90
 	
 	
@@ -30,7 +34,7 @@ func make_a_move():
 	var Adjustment = 0
 	
 	
-	if ray_cast_2d.is_colliding():
+	if down.is_colliding():
 		if ChanceOfAdjusment + 0.5 <= 0:
 			Adjustment = -1
 		if ChanceOfAdjusment + 0.5 >= 0:
@@ -42,16 +46,16 @@ func make_a_move():
 		if ChanceOfAdjusment + 0.5 >= 0:
 			Adjustment = 1
 	
-	var Usebal_dir = Directions[(int(Calculations) - Adjustment) % 4]
+	var index = (int(Calculations) - Adjustment) % 4
+	var Usebal_dir = Directions[index]
+	var Usebal_checking_dir = Cheking_dir[index]
 	
-	print(Usebal_dir)
+	position += Usebal_dir * int(not Usebal_checking_dir.is_colliding()) * 2
 	
-	move_and_collide(Usebal_dir)
 	
-	print(position)
-	
-	position = Vector2(int(round(position.x)), int(round(position.y)))
-	print(position)
+	if position == Vector2(4, 71):
+		print(Usebal_dir)
+
 
 
 
