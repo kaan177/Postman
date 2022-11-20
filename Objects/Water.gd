@@ -5,7 +5,7 @@ const GRAVITY = Vector2(0, 0.2)
 var Vector = Vector2.ZERO
 var Rng = RandomNumberGenerator.new()
 
-onready var world = get_parent()
+onready var Water_container = get_parent()
 onready var down = $Down
 onready var right = $Right
 onready var left = $Left
@@ -14,7 +14,6 @@ onready var up = $Up
 
 #connenct signal
 func _ready():
-	world.connect("WaterMovement", self, "make_a_move")
 	Rng.randomize()
 	make_a_move()
 	
