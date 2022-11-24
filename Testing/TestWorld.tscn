@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Objects/WaterTimer.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Objects/TileMap.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Objects/Portal.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Objects/Buttons.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Objects/ApearingPlatform.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 98, 97.5 )
@@ -365,6 +367,15 @@ position = Vector2( 24, 40 )
 
 [node name="Level T-1" parent="." instance=ExtResource( 9 )]
 position = Vector2( 128, 88 )
+
+[node name="Button" parent="." instance=ExtResource( 10 )]
+position = Vector2( 88, 96 )
+rotation = -1.63084
+Conected_node = NodePath("../ApearingPlatform")
+
+[node name="ApearingPlatform" parent="." instance=ExtResource( 11 )]
+position = Vector2( -40, 80 )
+Time = 5
 
 [connection signal="timeout" from="WaterTimer" to="." method="_on_WaterTimer_timeout"]
 
