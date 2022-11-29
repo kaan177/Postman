@@ -83,7 +83,8 @@ func Move(delta):
 	Motion = move_and_slide(Motion, UP, false, 4, PI/4, false)
 	for index in get_slide_count():
 		var collision = get_slide_collision(index)
-		if collision.collider.is_class("RigidBody2D"):
+		if collision.collider.is_class("RigidBody2D") and not collision.collider.name == "DrijvendPlatform":
+			print(collision.collider.name)
 			collision.collider.apply_central_impulse(-collision.normal * Gewicht)
 #Getting the direction of the letter
 func LetterThrow():
