@@ -13,7 +13,7 @@ export var Friction = 0.2
 var Jump_height = 100
 var Jump_time_to_peak = .5
 var Jump_time_to_descent = .4
-
+var Gewicht = 25
 
 #Remaining variables
 var Motion = Vector2.ZERO
@@ -80,7 +80,11 @@ func Move(delta):
 			animation_player.play("Fall")
 		if frictiondetection:
 			Motion.x = lerp(Motion.x, 0, Friction/4)
-	Motion = move_and_slide(Motion, UP)
+	Motion = move_and_slide(Motion, UP, false, 4, PI/4, false)
+	for index in get_slide_count():
+		var collision = get_slide_collision(index)
+		if collision.collider.is_class("RigidBody2D"):
+			collision.collider.apply_central_impulse(-collision.normal * Gewicht)
 #Getting the direction of the letter
 func LetterThrow():
 	#hier veranderen we de player input in een vector die de richting van de brief bepaalt
