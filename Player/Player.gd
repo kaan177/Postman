@@ -18,6 +18,7 @@ var Gewicht = 25
 #Remaining variables
 var Motion = Vector2.ZERO
 var Lettervector = Vector2.RIGHT
+var RopeCount = 0
 
 #Loading variables in
 onready var animation_player = $AnimationPlayer
@@ -40,46 +41,63 @@ func _physics_process(delta):
 
 func Move(delta):
 	var frictiondetection = false
-	if Motion.y > 0:
-		Motion.y += Jump_gravity * delta
-	else:
-		Motion.y += fall_gravity * delta
-	#Turning user input into movement
-	if Input.is_action_pressed("right"):
-		Motion.x = min(Motion.x + Accelaration, Max_speed)
-		if is_on_floor():
-			animation_player.play("Run")
-		sprite.flip_h = false
-	
-
-	elif Input.is_action_pressed("left"):
-		Motion.x = max(Motion.x - Accelaration, - Max_speed)
-		if is_on_floor():
-			animation_player.play("Run")
-		sprite.flip_h = true
+	if bool(RopeCount):
+		Motion = Vector2.ZERO
+		animation_player.play("Climb")
+		if Input.is_action_pressed("right"):
+			Motion.x = Max_speed/4
+			sprite.flip_h = false
 		
-	
-	else:
-		frictiondetection = true
-		if not Input.is_action_pressed("up") and is_on_floor():
-			animation_player.play("Default")
-		if Input.is_action_just_released("up"):
-			if Motion.y < -Jump_height/2:
-				get_node("Tween").interpolate_property(self,'Motion:y',Motion.y, -Jump_height/2, 0.15,Tween.TRANS_SINE,Tween.EASE_OUT)
-				get_node("Tween").start()
+		elif Input.is_action_pressed("left"):
+			Motion.x = -Max_speed/4
+			sprite.flip_h = true
 		
-	if is_on_floor():
-		if Input.is_action_just_pressed("up"):
-			Motion.y = Jump_velocity
-			animation_player.play("Jump")
+		elif Input.is_action_pressed("up"):
+			Motion.y = -Max_speed/4
+		
+		elif Input.is_action_pressed("down"):
+			Motion.y = Max_speed/4
+	else:
+		if Motion.y > 0:
+			Motion.y += Jump_gravity * delta
+		else:
+			Motion.y += fall_gravity * delta
+		#Turning user input into movement
+		if Input.is_action_pressed("right"):
+			Motion.x = min(Motion.x + Accelaration, Max_speed)
+			if is_on_floor():
+				animation_player.play("Run")
+			sprite.flip_h = false
+		
+		elif Input.is_action_pressed("left"):
+			Motion.x = max(Motion.x - Accelaration, - Max_speed)
+			if is_on_floor():
+				animation_player.play("Run")
+			sprite.flip_h = true
 			
-		if frictiondetection == true:
-			Motion.x = lerp(Motion.x, 0, Friction)
-	else:
-		if Motion.y <= 0:
-			animation_player.play("Fall")
-		if frictiondetection:
-			Motion.x = lerp(Motion.x, 0, Friction/4)
+		
+		else:
+			frictiondetection = true
+			if not Input.is_action_pressed("up") and is_on_floor():
+				animation_player.play("Default")
+			
+			if Input.is_action_just_released("up"):
+				if Motion.y < -Jump_height/2:
+					get_node("Tween").interpolate_property(self,'Motion:y',Motion.y, -Jump_height/2, 0.15,Tween.TRANS_SINE,Tween.EASE_OUT)
+					get_node("Tween").start()
+			
+		if is_on_floor():
+			if Input.is_action_just_pressed("up"):
+				Motion.y = Jump_velocity
+				animation_player.play("Jump")
+				
+			if frictiondetection == true:
+				Motion.x = lerp(Motion.x, 0, Friction)
+		else:
+			if Motion.y <= 0:
+				animation_player.play("Fall")
+			if frictiondetection:
+				Motion.x = lerp(Motion.x, 0, Friction/4)
 	Motion = move_and_slide(Motion, UP, false, 4, PI/4, false)
 	for index in get_slide_count():
 		var collision = get_slide_collision(index)
@@ -102,3 +120,12 @@ func LetterThrow():
 
 
 
+
+
+func _on_Area2D_body_entered(body):
+	RopeCount += 1
+
+
+func _on_Area2D_body_exited(body):
+	RopeCount -= 1
+	

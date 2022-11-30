@@ -3,16 +3,18 @@
 [ext_resource path="res://Textures/rope pulleys.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 5, 5 )
+extents = Vector2( 1, 8 )
 
-[node name="RopePulley" type="StaticBody2D"]
+[node name="Rope piece" type="StaticBody2D"]
+collision_layer = 64
+collision_mask = 0
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, -8 )
+position = Vector2( -4, -8 )
 texture = ExtResource( 1 )
 hframes = 6
 vframes = 2
+frame = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 1 )
 shape = SubResource( 1 )
