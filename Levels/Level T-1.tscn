@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://Objects/TileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -7,9 +7,8 @@
 [ext_resource path="res://Textures/TIle_set_caves2.png" type="Texture" id=5]
 [ext_resource path="res://Textures/Pipes.png" type="Texture" id=6]
 [ext_resource path="res://Textures/valve pipre.png" type="Texture" id=7]
-[ext_resource path="res://Objects/PipeEnd.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/ApearingPlatform.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Objects/Buttons.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Objects/background music.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -459,33 +458,12 @@ position = Vector2( 1246, 255 )
 [node name="TestWorldpos" type="Position2D" parent="."]
 position = Vector2( 16, 104 )
 
-[node name="PipeEnd" parent="." instance=ExtResource( 8 )]
-position = Vector2( 40, 96 )
-Max_water = 10
+[node name="ApearingPlatform" parent="." instance=ExtResource( 8 )]
+position = Vector2( 96, 93 )
 
 [node name="Button" parent="." instance=ExtResource( 9 )]
-position = Vector2( 176, 136 )
-Conected_node = NodePath("../PipeEnd")
-
-[node name="PipeEnd2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 168, 80 )
-Max_water = 10
-
-[node name="PipeEnd3" parent="." instance=ExtResource( 8 )]
-position = Vector2( 40, 72 )
-Max_water = 10
-
-[node name="Button2" parent="." instance=ExtResource( 9 )]
-position = Vector2( 40, 136 )
-Conected_node = NodePath("../PipeEnd2")
-
-[node name="Button3" parent="." instance=ExtResource( 9 )]
-position = Vector2( 112, 136 )
-Conected_node = NodePath("../PipeEnd3")
-
-[node name="background music" parent="." instance=ExtResource( 10 )]
-
-[connection signal="timeout" from="WaterTimer" to="." method="_on_WaterTimer_timeout"]
+position = Vector2( 184, 143 )
+Conected_node = NodePath("../ApearingPlatform")
 
 [editable path="Player"]
 [editable path="Player/PlayerCamera"]

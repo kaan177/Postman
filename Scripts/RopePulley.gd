@@ -18,7 +18,8 @@ func _ready():
 
 
 func act():
-	active = true
+	active = true 
+	
 
 func make_a_move():
 	if active:
