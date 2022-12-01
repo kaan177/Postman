@@ -45,18 +45,18 @@ func Move(delta):
 		Motion = Vector2.ZERO
 		animation_player.play("Climb")
 		if Input.is_action_pressed("right"):
-			Motion.x = Max_speed/4
+			Motion.x = Max_speed/3
 			sprite.flip_h = false
 		
 		elif Input.is_action_pressed("left"):
-			Motion.x = -Max_speed/4
+			Motion.x = -Max_speed/3
 			sprite.flip_h = true
 		
 		elif Input.is_action_pressed("up"):
-			Motion.y = -Max_speed/4
+			Motion.y = -Max_speed/3
 		
 		elif Input.is_action_pressed("down"):
-			Motion.y = Max_speed/4
+			Motion.y = Max_speed/3
 	else:
 		if Motion.y > 0:
 			Motion.y += Jump_gravity * delta
