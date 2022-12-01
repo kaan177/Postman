@@ -19,6 +19,12 @@ func _ready():
 	if GlobalScript.From_level != null:
 		Player.set_position(get_node(GlobalScript.From_level + "pos").position)
 
+func _process(delta):
+	print("goosdfsdf")
+	if Input.is_action_just_pressed("reset"):
+		get_tree().change_scene(self.filename)
+
+
 #Spawnt de letter
 func Spawn_letter(Lettervector):
 	if not $Letter in get_children():

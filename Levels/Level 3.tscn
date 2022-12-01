@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://Textures/Pipes.png" type="Texture" id=1]
 [ext_resource path="res://Textures/TIle_set_caves2.png" type="Texture" id=2]
@@ -604,6 +604,9 @@ resource_local_to_scene = true
 7/shapes = [  ]
 7/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=50]
+extents = Vector2( 4.21336, 29.8292 )
+
 [node name="Level 3" type="Node2D"]
 script = ExtResource( 9 )
 
@@ -809,8 +812,9 @@ position = Vector2( 2, 0 )
 scale = Vector2( 1.72004, 1.24 )
 
 [node name="CollisionShape2D" parent="DP-C1" index="1"]
-position = Vector2( 3, -1 )
+position = Vector2( 2.5, -2 )
 scale = Vector2( 1.66137, 1.76002 )
+shape = SubResource( 50 )
 
 [node name="DP-D1" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1366, -88 )
@@ -830,7 +834,7 @@ Max_water = 60
 [node name="PipeEnd C" parent="." instance=ExtResource( 14 )]
 position = Vector2( 1512, 408 )
 rotation = 1.5708
-Max_water = 200
+Max_water = 250
 
 [node name="PipeEnd D" parent="." instance=ExtResource( 14 )]
 position = Vector2( 1384, -216 )
