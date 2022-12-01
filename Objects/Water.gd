@@ -44,14 +44,14 @@ func make_a_move():
 	
 	var Usebal_dir = Directions[(int(Calculations) - Adjustment) % 4]
 	
-	print(Usebal_dir)
 	
-	move_and_collide(Usebal_dir)
 	
-	print(position)
+	move_and_collide(Usebal_dir * 2)
 	
-	position = Vector2(int(round(position.x)), int(round(position.y)))
-	print(position)
+	
+	
+	position = Vector2(int(round(position.x)/2)*2, int(round(position.y)/2)*2)
+	
 
 
 

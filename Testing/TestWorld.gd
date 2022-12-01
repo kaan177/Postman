@@ -9,7 +9,8 @@ onready var pipe_end = $PipeEnd
 func _ready():
 	#connect signal met de speler node
 	Player.connect("letter_request", self, "Spawn_letter")
-#	pipe_end.connect("SpawnWater", self, "Spawn_water")
+	if pipe_end != null:
+		pipe_end.connect("SpawnWater", self, "Spawn_water")
 	if GlobalScript.From_level != null:
 		Player.set_position(get_node(GlobalScript.From_level + "pos").position)
 

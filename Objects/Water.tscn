@@ -7,6 +7,7 @@
 extents = Vector2( 0.5, 0.5 )
 
 [node name="Water" type="KinematicBody2D"]
+scale = Vector2( 2, 2 )
 collision_layer = 16
 collision_mask = 17
 script = ExtResource( 2 )
