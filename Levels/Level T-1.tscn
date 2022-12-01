@@ -461,6 +461,7 @@ position = Vector2( 16, 104 )
 
 [node name="PipeEnd" parent="." instance=ExtResource( 8 )]
 position = Vector2( 40, 96 )
+Max_water = 10
 
 [node name="Button" parent="." instance=ExtResource( 9 )]
 position = Vector2( 176, 136 )
@@ -468,9 +469,11 @@ Conected_node = NodePath("../PipeEnd")
 
 [node name="PipeEnd2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 168, 80 )
+Max_water = 10
 
 [node name="PipeEnd3" parent="." instance=ExtResource( 8 )]
 position = Vector2( 40, 72 )
+Max_water = 10
 
 [node name="Button2" parent="." instance=ExtResource( 9 )]
 position = Vector2( 40, 136 )

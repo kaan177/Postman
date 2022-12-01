@@ -1,5 +1,7 @@
 extends StaticBody2D
 
+export var Max_water = 100
+
 onready var Direction = Vector2(cos(rotation), sin(rotation))
 var SpitState = 0
 onready var Level = get_owner()
@@ -26,7 +28,9 @@ func Place_water():
 			Spitfar()
 
 func Spitslow():
-	emit_signal("SpawnWater", Direction, get_position() + Direction * 4)
+	if Max_water > 0:
+		emit_signal("SpawnWater", Direction, get_position() + Direction * 4)
+		Max_water -= 1
 
 func Spitfar():
 	pass
