@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/synthethic2 sans scifi (1).wav-a34386458f39eca4f21df7453182f4a5.sample"
+
+[deps]
+
+source_file="res://synthethic2 sans scifi (1).wav"
+dest_files=[ "res://.import/synthethic2 sans scifi (1).wav-a34386458f39eca4f21df7453182f4a5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
