@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Postman"
-run/main_scene="res://Levels/Level T-1.tscn"
+run/main_scene="res://Levels/Level B.tscn"
 config/icon="res://icon.png"
 
 [autoload]
