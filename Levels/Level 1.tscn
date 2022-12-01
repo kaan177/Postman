@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://Textures/Pipes.png" type="Texture" id=1]
 [ext_resource path="res://Textures/TIle_set_caves2.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Objects/Rope Pully/Rope piece.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Objects/Portal.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Objects/PipeEnd.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Objects/background music.tscn" type="PackedScene" id=14]
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -708,6 +709,8 @@ scale = Vector2( 1, 1.44 )
 [node name="PipeEnd" parent="." instance=ExtResource( 13 )]
 position = Vector2( 232, -96 )
 rotation = 1.5708
+
+[node name="background music" parent="." instance=ExtResource( 14 )]
 
 [connection signal="timeout" from="WaterTimer" to="." method="_on_WaterTimer_timeout"]
 
