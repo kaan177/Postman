@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 onready var Direction = Vector2(cos(rotation), sin(rotation))
-var SpitState = 1
+var SpitState = 0
 onready var Level = get_owner()
 onready var Area2d = $Area2D
 var bodies = 0
@@ -13,6 +13,8 @@ func _ready():
 	Level.connect("WaterMovement", self, "Place_water")
 	
 
+func act():
+	SpitState = 1
 
 func Place_water():
 	yield(get_tree(),"idle_frame")

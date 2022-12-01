@@ -46,11 +46,11 @@ func make_a_move():
 	
 	
 	
-	move_and_collide(Usebal_dir * 2)
+	move_and_collide(Usebal_dir * 4)
 	
 	
 	
-	position = Vector2(int(round(position.x)/2)*2, int(round(position.y)/2)*2)
+	position = Vector2(round(position.x/4)*4, round(position.y/4)*4)
 	
 
 

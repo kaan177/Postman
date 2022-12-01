@@ -14,7 +14,7 @@ vertices = PoolVector2Array( -8, 0, -8, -16, 0, -16, 0, 0 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 outlines = [ PoolVector2Array( -8, 0, -8, -16, 0, -16, 0, 0 ) ]
 
-[node name="PipeEnd" type="StaticBody2D"]
+[node name="PipeEnd" type="StaticBody2D" groups=["pipe"]]
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

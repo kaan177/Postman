@@ -9,8 +9,13 @@ onready var pipe_end = $PipeEnd
 func _ready():
 	#connect signal met de speler node
 	Player.connect("letter_request", self, "Spawn_letter")
-	if pipe_end != null:
-		pipe_end.connect("SpawnWater", self, "Spawn_water")
+	
+	for index in get_child_count():
+		if get_child(index).is_in_group("pipe"):
+			get_child(index).connect("SpawnWater", self, "Spawn_water")
+			
+		
+	
 	if GlobalScript.From_level != null:
 		Player.set_position(get_node(GlobalScript.From_level + "pos").position)
 
