@@ -18,6 +18,7 @@ config/icon="res://icon.png"
 
 Global_settings="*res://Global_settings.gd"
 GlobalScript="*res://Scripts/GlobalScript.gd"
+BackgroundMusic="*res://Objects/background music.tscn"
 
 [display]
 

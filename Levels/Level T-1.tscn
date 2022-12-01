@@ -9,7 +9,7 @@
 [ext_resource path="res://Textures/valve pipre.png" type="Texture" id=7]
 [ext_resource path="res://Objects/PipeEnd.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Objects/Buttons.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Objects/background music.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Objects/Portal.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -483,7 +483,8 @@ Conected_node = NodePath("../PipeEnd2")
 position = Vector2( 112, 136 )
 Conected_node = NodePath("../PipeEnd3")
 
-[node name="background music" parent="." instance=ExtResource( 10 )]
+[node name="Test" parent="." instance=ExtResource( 10 )]
+position = Vector2( 144, 126 )
 
 [connection signal="timeout" from="WaterTimer" to="." method="_on_WaterTimer_timeout"]
 
