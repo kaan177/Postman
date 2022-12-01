@@ -4,10 +4,18 @@ signal WaterMovement()
 
 onready var Player = get_node("Player")
 onready var Pause_menu = $PauseMenu
+onready var pipe_end = $PipeEnd
 
 func _ready():
 	#connect signal met de speler node
 	Player.connect("letter_request", self, "Spawn_letter")
+	
+	for index in get_child_count():
+		if get_child(index).is_in_group("pipe"):
+			get_child(index).connect("SpawnWater", self, "Spawn_water")
+			
+		
+	
 	if GlobalScript.From_level != null:
 		Player.set_position(get_node(GlobalScript.From_level + "pos").position)
 
@@ -19,6 +27,11 @@ func Spawn_letter(Lettervector):
 		Letter.Direction = Lettervector
 		self.add_child(Letter)
 
+func Spawn_water(direction, Position):
+	var water = preload("res://Objects/Water.tscn").instance()
+	water.set_position(Position)
+	water.Vector = direction
+	self.add_child(water)
 
 func _on_WaterTimer_timeout():
 	emit_signal("WaterMovement")

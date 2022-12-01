@@ -594,7 +594,7 @@ resource_local_to_scene = true
 7/z_index = 0
 
 [node name="TileMap" type="TileMap"]
-tile_set = SubResource( 34 )
+tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 262206, 0, 0, 393277, 0, 0, 589884, 0, 0, 786495, 0, 0 )
