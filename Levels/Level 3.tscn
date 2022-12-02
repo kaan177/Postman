@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://Textures/Pipes.png" type="Texture" id=1]
 [ext_resource path="res://Textures/TIle_set_caves2.png" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Objects/Portal.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Objects/PipeEnd.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Objects/Tilemap Touw.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Objects/Dancingman.tscn" type="PackedScene" id=16]
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -758,32 +759,38 @@ Conected_node = NodePath("../RP-S4")
 [node name="AP-B1" parent="." instance=ExtResource( 5 )]
 position = Vector2( 190, 863 )
 scale = Vector2( 0.599998, 0.72 )
+Time = 2
 
 [node name="AP-B2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 136, 822 )
 scale = Vector2( 0.594567, 0.746526 )
+Time = 2
 
 [node name="AP-B3" parent="." instance=ExtResource( 5 )]
 position = Vector2( 190, 779 )
 scale = Vector2( 0.630081, -0.759738 )
+Time = 2
 
 [node name="AP-B4" parent="." instance=ExtResource( 5 )]
 position = Vector2( 132, 750 )
 scale = Vector2( 0.700636, 0.755286 )
+Time = 2
 
 [node name="AP-B5" parent="." instance=ExtResource( 5 )]
 position = Vector2( 104, 699 )
 rotation = -3.14159
 scale = Vector2( 0.314165, -0.596269 )
+Time = 2
 
 [node name="AP-B6" parent="." instance=ExtResource( 5 )]
 position = Vector2( 179, 666 )
 scale = Vector2( 0.951623, 0.999258 )
+Time = 2
 
 [node name="AP-B7" parent="." instance=ExtResource( 5 )]
 position = Vector2( 261, 608 )
 scale = Vector2( 0.44, 1 )
-Time = 2
+Time = 3
 
 [node name="AP-C1" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1569, 824 )
@@ -807,7 +814,7 @@ position = Vector2( 68, -184 )
 position = Vector2( 1349, 447 )
 
 [node name="Player" parent="." instance=ExtResource( 8 )]
-position = Vector2( 1671, 781 )
+position = Vector2( 680, -132 )
 
 [node name="TopLeft" parent="Player/PlayerCamera/Node" index="0"]
 position = Vector2( -55, -412 )
@@ -851,6 +858,15 @@ Max_water = 80
 position = Vector2( 1384, -216 )
 rotation = 1.5708
 Max_water = 300
+
+[node name="Sprite" parent="." instance=ExtResource( 16 )]
+position = Vector2( 810, -128 )
+
+[node name="Sprite2" parent="." instance=ExtResource( 16 )]
+position = Vector2( 863, -127 )
+
+[node name="Sprite3" parent="." instance=ExtResource( 16 )]
+position = Vector2( 908, -128 )
 
 [connection signal="timeout" from="WaterTimer" to="." method="_on_WaterTimer_timeout"]
 
