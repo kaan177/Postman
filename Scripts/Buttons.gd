@@ -5,6 +5,7 @@ signal ButtonPressed()
 export var Conected_node :NodePath
 
 onready var sprite = $Sprite
+onready var audiostreamplayer = $AudioStreamPlayer
 
 var BodyAmount = 0
 
@@ -17,6 +18,8 @@ func _on_Buttons_body_entered(body):
 	BodyAmount += 1
 	if BodyAmount > 0:
 		sprite.frame = 1
+		audiostreamplayer.play()
+		
 	
 
 

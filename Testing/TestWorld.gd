@@ -6,9 +6,11 @@ onready var Player = get_node("Player")
 onready var Pause_menu = $PauseMenu
 onready var pipe_end = $PipeEnd
 
+
 func _ready():
 	#connect signal met de speler node
 	Player.connect("letter_request", self, "Spawn_letter")
+	BackgroundMusic.stream_paused = true
 	
 	for index in get_child_count():
 		if get_child(index).is_in_group("pipe"):
@@ -19,6 +21,9 @@ func _ready():
 	if GlobalScript.From_level != null:
 		Player.set_position(get_node(GlobalScript.From_level + "pos").position)
 
+func act():
+	BackgroundMusic.stream_paused = not BackgroundMusic.stream_paused
+	
 func _process(delta):
 	print("goosdfsdf")
 	if Input.is_action_just_pressed("reset"):
