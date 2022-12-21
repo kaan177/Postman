@@ -19,6 +19,7 @@ var Gewicht = 25
 var Motion = Vector2.ZERO
 var Lettervector = Vector2.RIGHT
 var RopeCount = 0
+var LetterThrowBug = false
 
 #Loading variables in
 onready var animation_player = $AnimationPlayer
@@ -109,22 +110,30 @@ func LetterThrow():
 	#hier veranderen we de player input in een vector die de richting van de brief bepaalt
 	var Placeholdervector = Vector2.ZERO
 	
-	if Input.is_action_just_pressed("letter_up"):
-		Placeholdervector = Vector2.UP
+	if not LetterThrowBug:
 		
-	elif Input.is_action_just_pressed("letter_right"):
-		Placeholdervector = Vector2.RIGHT
+		if Input.is_action_just_pressed("letter_up"):
+			Placeholdervector = Vector2.UP
+			
+		elif Input.is_action_just_pressed("letter_right"):
+			Placeholdervector = Vector2.RIGHT
+			
+		elif Input.is_action_just_pressed("letter_left"):
+			Placeholdervector = Vector2.LEFT
 		
-	elif Input.is_action_just_pressed("letter_left"):
-		Placeholdervector = Vector2.LEFT
-	
-	if Placeholdervector != Vector2.ZERO:
-		Lettervector = Placeholdervector
+		if Placeholdervector != Vector2.ZERO:
+			Lettervector = Placeholdervector
+	else:
+		Placeholdervector.x = Input.get_action_strength("letter_right") - Input.get_action_strength("letter_left")
+		Placeholdervector.y = Input.get_action_strength("letter_down") - Input.get_action_strength("letter_up")
+		if Placeholdervector != Vector2.ZERO:
+			Lettervector = Placeholdervector
 	#Signaling World node to spawn letter
 	emit_signal("letter_request", Lettervector)
 
 
-
+func act():
+	LetterThrowBug = not LetterThrowBug
 
 
 

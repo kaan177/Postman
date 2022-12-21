@@ -72,12 +72,13 @@ position = Vector2( 178, 207 )
 current = false
 
 [node name="Icon" type="Sprite" parent="."]
-position = Vector2( 253, 139 )
+position = Vector2( 252, 142 )
 scale = Vector2( 0.388, 0.388 )
 z_index = -2
 texture = ExtResource( 6 )
 
 [connection signal="pressed" from="MarginContainer/Buttons/PlayButten" to="." method="_on_PlayButten_pressed"]
+[connection signal="button_down" from="MarginContainer/Buttons/AboutUsButton" to="." method="_on_AboutUsButton_button_down"]
 [connection signal="pressed" from="MarginContainer/Buttons/ExitButten" to="." method="_on_ExitButten_pressed"]
 
 [editable path="Player"]
