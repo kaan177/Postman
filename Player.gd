@@ -54,10 +54,10 @@ func Move(delta):
 			sprite.flip_h = true
 		
 		elif Input.is_action_pressed("up"):
-			Motion.y = -Max_speed/3
+			Motion.y = -Max_speed/2
 		
 		elif Input.is_action_pressed("down"):
-			Motion.y = Max_speed/3
+			Motion.y = Max_speed/2
 	else:
 		if Motion.y > 0:
 			Motion.y += Jump_gravity * delta
