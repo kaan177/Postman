@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Slide9.jpg-3a5ed43b8700c15768bb6056a052893b.stex"
+path="res://.import/IMG-20221221-WA0015.jpg-bea9944a7e28cb6a90b3693593f40a4c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://dia's/Programeren/Slide9.jpg"
-dest_files=[ "res://.import/Slide9.jpg-3a5ed43b8700c15768bb6056a052893b.stex" ]
+source_file="res://dia's/Het proces/IMG-20221221-WA0015.jpg"
+dest_files=[ "res://.import/IMG-20221221-WA0015.jpg-bea9944a7e28cb6a90b3693593f40a4c.stex" ]
 
 [params]
 

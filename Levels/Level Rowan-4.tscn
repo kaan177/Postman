@@ -25,7 +25,7 @@ position = Vector2( -10, 273 )
 z_index = -2
 
 [node name="Slide11" type="Sprite" parent="."]
-position = Vector2( 257, 146 )
+position = Vector2( 256, 146 )
 scale = Vector2( 0.4, 0.4 )
 z_index = -2
 texture = ExtResource( 5 )
